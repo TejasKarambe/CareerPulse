@@ -20,11 +20,11 @@ const TUTORIAL_STEPS = [
     subtitle: 'Step 1 of 5 • Introduction',
     icon: Sparkles,
     content: (
-      <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+      <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
         <p>
           CareerPulse is your all-in-one personal <strong>Job Application Tracker</strong> designed to keep your job hunt organized, proactive, and stress-free.
         </p>
-        <div className="p-3.5 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/60">
+        <div className="p-3 sm:p-3.5 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/60">
           <p className="font-semibold text-slate-800 dark:text-slate-200 mb-1">Key Advantages:</p>
           <ul className="list-disc list-inside space-y-1 text-xs text-slate-500 dark:text-slate-400">
             <li><strong>100% Offline & Private:</strong> Stored locally in your browser's IndexedDB.</li>
@@ -40,16 +40,16 @@ const TUTORIAL_STEPS = [
     subtitle: 'Step 2 of 5 • Applications Management',
     icon: Kanban,
     content: (
-      <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+      <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
         <p>
           Organize your opportunities across 5 distinct pipeline stages:
         </p>
-        <div className="grid grid-cols-5 gap-1.5 text-center text-xs font-semibold">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 text-center text-xs font-semibold">
           <div className="p-2 bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 rounded-lg border border-blue-200 dark:border-blue-800">Applied</div>
           <div className="p-2 bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 rounded-lg border border-amber-200 dark:border-amber-800">Screening</div>
           <div className="p-2 bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 rounded-lg border border-sky-200 dark:border-sky-800">Interview</div>
           <div className="p-2 bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 rounded-lg border border-emerald-200 dark:border-emerald-800">Offer 🎉</div>
-          <div className="p-2 bg-rose-50 dark:bg-rose-950 text-rose-600 dark:text-rose-400 rounded-lg border border-rose-200 dark:border-rose-800">Rejected</div>
+          <div className="p-2 bg-rose-50 dark:bg-rose-950 text-rose-600 dark:text-rose-400 rounded-lg border border-rose-200 dark:border-rose-800 col-span-2 sm:col-span-1">Rejected</div>
         </div>
         <p className="text-xs text-slate-500">
           💡 <em>Tip: Drag and drop cards between stages seamlessly. When you drag an application to <strong>Offer</strong>, celebrate with instant confetti!</em>
@@ -58,13 +58,13 @@ const TUTORIAL_STEPS = [
     ),
   },
   {
-    title: 'Adding Applications & Interview Logs',
-    subtitle: 'Step 3 of 5 • Job Details & Questionnaire',
+    title: 'Adding Applications & Interviews',
+    subtitle: 'Step 3 of 5 • Job Details & Logs',
     icon: Plus,
     content: (
-      <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+      <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
         <p>
-          Click the <span className="font-semibold text-slate-900 dark:text-white">&quot;+ New Application&quot;</span> button in the top navigation bar anytime to add a job with:
+          Click the <span className="font-semibold text-slate-900 dark:text-white">&quot;+ New Application&quot;</span> button in the navigation bar to add a job with:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
           <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/60">
@@ -88,9 +88,9 @@ const TUTORIAL_STEPS = [
     subtitle: 'Step 4 of 5 • Schedule & Metrics',
     icon: BarChart3,
     content: (
-      <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+      <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
         <p>
-          Never miss an interview again and track your personal job search metrics:
+          Never miss an interview and monitor your job hunt performance:
         </p>
         <div className="space-y-2 text-xs">
           <div className="flex items-start gap-2 p-2 bg-slate-50 dark:bg-slate-800/40 rounded-lg">
@@ -114,13 +114,13 @@ const TUTORIAL_STEPS = [
     subtitle: 'Step 5 of 5 • Customization & Safety',
     icon: Palette,
     content: (
-      <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+      <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
         <p>
           Personalize CareerPulse according to your taste:
         </p>
         <ul className="list-disc list-inside space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
           <li><strong>Theme Mode:</strong> Switch between Light, Dark, or System Sync.</li>
-          <li><strong>Multi-Color Palettes:</strong> Choose from Electric Indigo, Emerald Mint, Royal Purple, Crimson Rose, Warm Sunset, or Ocean Cyan.</li>
+          <li><strong>Multi-Color Palettes:</strong> Choose from 6 custom colors (Indigo, Emerald, Purple, Rose, Amber, Ocean).</li>
           <li><strong>JSON Backup:</strong> Export your data anytime to keep a backup or import onto another device.</li>
         </ul>
         <div className="p-3 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xl text-emerald-800 dark:text-emerald-300 text-xs font-medium">
@@ -137,7 +137,6 @@ export const TutorialModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const step = TUTORIAL_STEPS[currentStep];
-  const Icon = step.icon;
   const isLast = currentStep === TUTORIAL_STEPS.length - 1;
 
   const nextStep = () => {
@@ -162,7 +161,7 @@ export const TutorialModal = ({ isOpen, onClose }) => {
       subtitle={step.subtitle}
       maxWidth="max-w-xl"
     >
-      <div className="space-y-6">
+      <div className="space-y-5">
         {/* Step Indicator Progress Bar */}
         <div className="flex items-center gap-1.5 w-full">
           {TUTORIAL_STEPS.map((_, idx) => (
@@ -178,17 +177,18 @@ export const TutorialModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Step Content */}
-        <div className="py-2">
+        <div className="py-1">
           {step.content}
         </div>
 
         {/* Step Footer Navigation */}
-        <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
+        <div className="flex items-center justify-between pt-3 border-t border-slate-200 dark:border-slate-800">
           <Button
             variant="outline"
             size="sm"
             onClick={prevStep}
             disabled={currentStep === 0}
+            className="text-xs px-2.5 sm:px-3"
           >
             <ChevronLeft size={16} />
             <span>Previous</span>
@@ -198,8 +198,9 @@ export const TutorialModal = ({ isOpen, onClose }) => {
             variant="primary"
             size="sm"
             onClick={nextStep}
+            className="text-xs px-3"
           >
-            <span>{isLast ? 'Get Started' : 'Next Step'}</span>
+            <span>{isLast ? 'Get Started' : 'Next'}</span>
             {isLast ? <CheckCircle2 size={16} /> : <ChevronRight size={16} />}
           </Button>
         </div>

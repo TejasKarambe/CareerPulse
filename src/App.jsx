@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useApp } from './context/AppContext';
 import { Sidebar } from './components/layout/Sidebar';
 import { Navbar } from './components/layout/Navbar';
+import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { DashboardView } from './components/analytics/DashboardView';
 import { ApplicationsView } from './components/applications/ApplicationsView';
 import { AnalyticsView } from './components/analytics/AnalyticsView';
@@ -26,6 +27,7 @@ export function App() {
     completeTutorial
   } = useApp();
 
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [formModalOpen, setFormModalOpen] = useState(false);
   const [editingApp, setEditingApp] = useState(null);
   const [defaultStageForNew, setDefaultStageForNew] = useState('applied');
@@ -70,14 +72,21 @@ export function App() {
 
   return (
     <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950 font-sans">
-      {/* Sidebar Navigation */}
-      <Sidebar />
+      {/* Sidebar Navigation (Desktop persistent, Mobile slide-over drawer) */}
+      <Sidebar
+        isOpen={mobileSidebarOpen}
+        onClose={() => setMobileSidebarOpen(false)}
+      />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
-        <Navbar onOpenNewModal={() => handleOpenNewModal('applied')} />
+        <Navbar
+          onOpenNewModal={() => handleOpenNewModal('applied')}
+          onToggleMobileSidebar={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+        />
 
-        <main ref={mainContentRef} className="p-6 md:p-8 flex-1">
+        {/* Padding bottom extra for mobile bottom nav (pb-20 on mobile, pb-8 on desktop) */}
+        <main ref={mainContentRef} className="p-3.5 sm:p-6 md:p-8 flex-1 pb-20 lg:pb-8">
           {loading ? (
             <div className="h-64 flex items-center justify-center">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 theme-border-primary"></div>
@@ -119,6 +128,9 @@ export function App() {
             </>
           )}
         </main>
+
+        {/* Mobile Thumb Navigation Bar (< lg screens) */}
+        <MobileBottomNav />
       </div>
 
       {/* Create / Edit Modal */}
