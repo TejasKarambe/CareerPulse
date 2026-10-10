@@ -124,9 +124,9 @@ export const ApplicationForm = ({ initialData, onSave, onCancel }) => {
         <button
           type="button"
           onClick={() => setActiveTab('details')}
-          className={`px-3 py-1.5 rounded-lg font-medium transition-all ${
+          className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
             activeTab === 'details'
-              ? 'bg-indigo-600 text-white'
+              ? 'theme-btn-primary shadow-xs'
               : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
           }`}
         >
@@ -135,9 +135,9 @@ export const ApplicationForm = ({ initialData, onSave, onCancel }) => {
         <button
           type="button"
           onClick={() => setActiveTab('interviews')}
-          className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 ${
+          className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
             activeTab === 'interviews'
-              ? 'bg-indigo-600 text-white'
+              ? 'theme-btn-primary shadow-xs'
               : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
           }`}
         >
@@ -147,9 +147,9 @@ export const ApplicationForm = ({ initialData, onSave, onCancel }) => {
         <button
           type="button"
           onClick={() => setActiveTab('questions')}
-          className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 ${
+          className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
             activeTab === 'questions'
-              ? 'bg-indigo-600 text-white'
+              ? 'theme-btn-primary shadow-xs'
               : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
           }`}
         >

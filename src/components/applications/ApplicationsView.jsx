@@ -122,7 +122,7 @@ export const ApplicationsView = ({
                 setSelectedStage('all');
                 setSelectedArrangement('all');
               }}
-              className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold hover:underline px-2 py-1 cursor-pointer"
+              className="text-xs theme-text-primary font-semibold hover:underline px-2 py-1 cursor-pointer"
             >
               Reset Filters
             </button>
@@ -136,7 +136,7 @@ export const ApplicationsView = ({
               onClick={() => setViewMode('kanban')}
               className={`p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
                 viewMode === 'kanban'
-                  ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white shadow-xs'
+                  ? 'theme-btn-primary shadow-xs'
                   : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -147,7 +147,7 @@ export const ApplicationsView = ({
               onClick={() => setViewMode('list')}
               className={`p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
                 viewMode === 'list'
-                  ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white shadow-xs'
+                  ? 'theme-btn-primary shadow-xs'
                   : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
