@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --primary: 99 102 241; /* Default Indigo */
+    --primary-hover: 79 70 229;
+  }
+}
+
+/* Palette Themes via CSS variables and dataset */
+[data-palette="indigo"] {
+  --primary: 99 102 241;
+  --primary-hover: 79 70 229;
+}
+
+[data-palette="emerald"] {
+  --primary: 16 185 129;
+  --primary-hover: 5 150 105;
+}
+
+[data-palette="violet"] {
+  --primary: 139 92 246;
+  --primary-hover: 124 58 237;
+}
+
+[data-palette="rose"] {
+  --primary: 244 63 94;
+  --primary-hover: 225 29 72;
+}
+
+[data-palette="amber"] {
+  --primary: 245 158 11;
+  --primary-hover: 217 119 6;
+}
+
+[data-palette="ocean"] {
+  --primary: 14 165 233;
+  --primary-hover: 2 132 199;
+}
+
+/* Dynamic theme helper classes */
+.theme-btn-primary {
+  background-color: rgb(var(--primary));
+  color: #ffffff;
+}
+
+.theme-btn-primary:hover {
+  background-color: rgb(var(--primary-hover));
+}
+
+.theme-text-primary {
+  color: rgb(var(--primary));
+}
+
+.theme-border-primary {
+  border-color: rgb(var(--primary));
+}
+
+.theme-ring-primary {
+  --tw-ring-color: rgb(var(--primary));
+}
+
+.theme-bg-light {
+  background-color: rgba(var(--primary), 0.1);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
